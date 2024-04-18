@@ -28,7 +28,7 @@ constructor(private readonly postagemService: PostagemService) {}
     @Post()
     @HttpCode(HttpStatus.CREATED)
     create(@Body() postagem: Postagem): Promise<Postagem>{
-        return this.postagemService.create(postagem)
+        return this.postagemService.create(postagem);
     }
 
     @Put()
