@@ -2,6 +2,7 @@ import { IsNotEmpty } from "class-validator";
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 import { Temas } from "../../temas/entities/temas.entity";
 import { Transform, TransformFnParams } from "class-transformer";
+import { Usuario } from "../../usuario/entities/usuario.entities";
 
 @Entity({name: "tb_postagem"})  //decorador  
 export class Postagem{
@@ -21,10 +22,16 @@ export class Postagem{
     texto: string;
 
     @UpdateDateColumn() //Atualiza automaticamente pegando a data e hora do sistema
-    date: Date;
+     date: Date;
 
     @ManyToOne(() => Temas, (tema) => tema.postagem,{
    onDelete: "CASCADE"
    })
      tema: Temas; //Chave estrangeira
+
+
+   @ManyToOne(() => Usuario, (usuario) => usuario.postagem,{
+      onDelete: "CASCADE"
+     })
+     usuario: Usuario
 }
