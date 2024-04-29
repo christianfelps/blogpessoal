@@ -7,7 +7,7 @@ import { Temas } from './temas/entities/temas.entity';
 import { AuthModule } from './auth/auth.module';
 import { UsuarioModule } from './usuario/usuario.module';
 import { Bcrypt } from './auth/bcrypt/bcrypt';
-import { Usuario } from './usuario/entities/usuario.entities';
+import { Usuario } from './usuario/entities/usuario.entity';
 
 @Module({
   imports: [
@@ -18,9 +18,9 @@ import { Usuario } from './usuario/entities/usuario.entities';
       username:'root',
       password:'root',
       database:'db_blogpessoal',
-      entities: [Postagem, Temas,Usuario, Bcrypt],
+      entities: [Postagem, Temas, Usuario, Bcrypt],
       synchronize: true,
-      logging: true,
+      // logging: true,
     }),
     PostagemModule,
     TemasModule,
