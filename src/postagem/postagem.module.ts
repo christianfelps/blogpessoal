@@ -3,7 +3,7 @@ import { TypeOrmModule } from "@nestjs/typeorm";
 import { PostagemController } from "./controllers/postagem.controller";
 import { Postagem } from "./entities/postagem.entity";
 import { PostagemService } from "./services/postagem.service";
-import { TemasService } from "../temas/services/temas.module";
+import { TemasService } from "../temas/services/temas.service";
 import { TemasModule } from "../temas/temas.module";
 
 @Module({
